@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-
+    compile group: 'at.bestsolution.eclipse', name: 'org.eclipse.fx.ui.controls', version: '2.2.0'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
