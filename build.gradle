@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+version = '0.0.1-SNAPSHOT'
+group   = 'com.anchorage'
+
+repositories {
+	jcenter()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/' 
+    }
+
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+test {
+	exclude '**/*Integration*'
+}
+
+artifacts {
+    archives sourcesJar
+}
