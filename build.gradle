@@ -17,6 +17,13 @@ repositories {
 
 dependencies {
     compile group: 'at.bestsolution.eclipse', name: 'org.eclipse.fx.ui.controls', version: '2.2.0'
+    compile group: 'junit', name: 'junit', version: '4.+'
+	compile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+	compile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.+'
+	compile (group: 'org.jmock', name: 'jmock-junit4', version: '2.8.2'){
+		exclude module: 'junit'
+	}
+	compile group: 'org.jmock', name: 'jmock-legacy', version: '2.8.2'    
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
